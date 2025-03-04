@@ -2,11 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            steps{
-                script {
-                    sh 'docker run --rm node:14.21-slim node --version'
-                }
-                
+            agent {
+                docker { image 'node:14.21-slim' }
+            }
+            steps {
+                sh 'node --version'
             }
         }
     }
