@@ -1,0 +1,27 @@
+{
+  "title": "Node.js Application Metrics",
+  "panels": [
+    {
+      "title": "HTTP Request Duration",
+      "type": "graph",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(http_request_duration_ms_sum[5m])",
+          "legendFormat": "{{method}} {{route}}"
+        }
+      ]
+    },
+    {
+      "title": "HTTP Requests Total",
+      "type": "graph", 
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(http_request_total[5m])",
+          "legendFormat": "{{method}} {{route}}"
+        }
+      ]
+    }
+  ]
+}
