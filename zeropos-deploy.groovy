@@ -2,11 +2,15 @@ pipeline {
     agent any
     stages {
         stage('Install dependencies') {
-            steps {
-                dir('ZeroPOSApi-release')
-                {
-                    sh 'npm install'
+            agent {
+                docker {
+                    image 'node:14.21-slim'
+                    args '-v ZeroPOSApi-release:/run'
                 }
+            }
+            steps {
+                sh 'cd /run'
+                sh 'pwd'
             }
         }
         stage('Test') {
