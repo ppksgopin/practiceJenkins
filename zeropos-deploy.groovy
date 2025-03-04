@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Install dependencies') {
             steps {
                 dir('ZeroPOSApi-release')
                 {
-                    sh 'pwd'
+                    sh 'npm install'
                 }
             }
         }
