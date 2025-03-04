@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                dir('ZeroPOSApi-release')
+                {
+                    sh 'pwd'
+                }
             }
         }
         stage('Test') {
