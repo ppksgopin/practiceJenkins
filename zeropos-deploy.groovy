@@ -1,10 +1,11 @@
+Jenkinsfile (Declarative Pipeline)
+
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('Build') {
-            agent {
-                docker { image 'node:14.21-slim' }
-            }
+        stage('Test') {
             steps {
                 sh 'node --version'
             }
