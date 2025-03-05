@@ -2,11 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build and transfer') {
             agent {
                 docker {
                     image 'node:10.23.2'
                     args '-u root'
+                    reuseNode true
                 }
             }
            steps {
@@ -17,5 +18,24 @@ pipeline {
                 }
            }
         }
+        stage('Remote and deploy') {
+            steps {
+                script {
+                    withCredentials([
+                        encryptedPassphrase: '{AQAAABAAAAAgA1tVXvjP2qbJJ54rEm9OlNhbWtSUJRVHVD7BydIxVJWQDz+IP6lasW52JhDm0Pfm}', key: '', keyPath: '', username: 'root']) {
+                            sh """
+                                pwd
+                            """
+                        }
+                                                
+                    
+                }
+            }
+        }
     }
 }
+
+
+
+
+        
