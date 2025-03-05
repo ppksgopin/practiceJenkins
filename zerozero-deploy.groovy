@@ -10,9 +10,7 @@ pipeline {
             }
            steps {
                 dir('zerozero-g2-react-develop') {
-                    sh 'pwd'
-                    sh 'node -v'
-                    sh 'npm -v'
+                    sh 'npm install'
                 }
            }
         }
