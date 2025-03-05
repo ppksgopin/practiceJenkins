@@ -1,0 +1,13 @@
+.toastify--top-center{
+    top: 80px;
+    left: 50%;
+    margin-left: -160px;
+}
+
+@media (max-width: 480px) {
+    .toastify--top-center{
+        top: 50px;
+        left: 0;
+        margin: 0;
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "modules": "commonjs",
+        "loose": false,
+        "targets": {
+          "node": "current",
+          "browsers": ["> 0.25%", "last 2 versions", "ie >= 11"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./app"
+        ]
+      }
+    ],
+    ["styled-components", {
+      "ssr": true
+    }],
+    "dynamic-import-node",
+    "loadable-components/babel",
+    "transform-object-rest-spread",
+    "transform-class-properties"
+  ]
+}

@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import "../scenes/common/components/Loading_Component/index.css";
+
+/*
+* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 100;
+    src: url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2") format("woff2"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff") format("woff"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2") format("woff2"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff") format("woff"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2") format("woff2"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff") format("woff"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2") format("woff2"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff") format("woff"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    src: url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2") format("woff2"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff") format("woff"), url("https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf") format("opentype");
+}
+
+html, body {
+
+    //font-family: "Noto Sans TC","儷黑 Pro", "LiHei Pro","文泉驛正黑", "WenQuanYi Zen Hei", "微軟正黑體", "Microsoft JhengHei", "新細明體", sans-serif, Arial, Helvetica;
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+    background: #f8f8f8;
+
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 隱藏水平滾動 */
+}
+
+input[type=text] {
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+}
+
+select, option {
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #aaa;
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+}
+
+::-moz-placeholder {
+    color: #aaa;
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+}
+
+:-ms-input-placeholder {
+    color: #aaa;
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+}
+
+:-moz-placeholder {
+    color: #aaa;
+    font-family: 'Noto Sans TC',"Arial","\\6587\6CC9\9A5B\6B63\9ED1","WenQuanYi Zen Hei","\\5137\9ED1 Pro","LiHei Pro","\\5FAE\8EDF\6B63\9ED1\9AD4","Microsoft JhengHei","sans-serif";
+    font-weight: 300;
+    letter-spacing: 0.125em;
+}
+
+html {
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        height: 80px;
+        z-index: 0;
+        display:none;
+    }
+
+    @media (max-width: 850px) {
+        &::after {
+            height: 0;
+            display: none;
+        }
+    }
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
+
+
+.swal-footer {
+  text-align: center;
+}
+.swal-text {
+  font-size:18px;
+  color:#333;
+}
+.swal-button {
+  padding: 0;
+  min-width:100px;
+  text-align: center;
+  font-size:16px;
+  line-height: 50px;
+  &.swal-button--confirm{
+    background:#22d3c5;
+  }
+  &.swal-button--cancel{
+    background:#ff8188;
+  }
+}

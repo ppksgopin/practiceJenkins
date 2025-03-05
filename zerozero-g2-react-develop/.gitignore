@@ -1,0 +1,11 @@
+public/
+npm-debug.log
+node_modules/
+/dist/
+/coverage/
+.env
+.idea/
+zerozero-g2-react.iml
+package-lock.json
+yarn.lock
+yarn-error.log
