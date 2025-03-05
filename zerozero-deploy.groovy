@@ -19,14 +19,20 @@ pipeline {
            }
         }
         stage('Remote and deploy') {
+            agent any
+            environment {
+                REMOTE_HOST = '172.19.117.190'  // 遠端主機 IP
+                REMOTE_USER = 'root'  // 遠端主機使用者名稱
+                REMOTE_PASSWORD = 'Tifalockheart@0215'  // 遠端主機密碼
+                TAR_FILE = '/root/zerozero-build.tar.gz'  // 要解壓縮的檔案
+                DESTINATION_PATH = '/root/app'  // 解壓縮目標目錄
+            }
             steps {
                 script {
-                    withCredentials([
-                        encryptedPassphrase: '{AQAAABAAAAAgA1tVXvjP2qbJJ54rEm9OlNhbWtSUJRVHVD7BydIxVJWQDz+IP6lasW52JhDm0Pfm}', key: '', keyPath: '', username: 'root']) {
-                            sh """
-                                pwd
-                            """
-                        }
+                    sh """
+                        sshpass -p ${REMOTE_PASSWORD} ssh ${REMOTE_USER}@${REMOTE_HOST} \
+                        "tar -xvf ${TAR_FILE} -C ${DESTINATION_PATH}"
+                    """
                 }
             }
         }
