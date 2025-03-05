@@ -11,7 +11,7 @@ pipeline {
             }
            steps {
                 dir('zerozero-g2-react-develop') {
-                    sh 'sudo chown -R $(whoami):$(whoami) ~/.npm'
+                    sh 'chown -R $(whoami):$(whoami) ~/.npm'
                     sh 'npm install'
                 }
            }
