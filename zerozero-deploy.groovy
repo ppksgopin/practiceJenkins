@@ -10,7 +10,7 @@ pipeline {
             }
            steps {
                 dir('zerozero-g2-react-develop') {
-                    sh 'echo "with docker."'
+                    sh 'node -v'
                 }
            }
         }
