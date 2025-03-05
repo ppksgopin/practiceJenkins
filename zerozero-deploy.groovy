@@ -20,6 +20,20 @@ pipeline {
                 }
            }
         }
+        stage('Extract zip file') {
+            steps {
+                script {
+                    def remote = [:]
+                    remote.name = 'Deploy-VM'
+                    remote.host = '172.19.117.190'
+                    remote.user = 'root'
+                    remote.password = 'Tifalockheart@0215'  // 或使用密鑰
+                    remote.allowAnyHosts = true
+
+                    sshCommand remote: remote, command: "tar -xvf zerozero-build.tar.gz -C app"
+                }
+            }
+        }
     }
 }
 
