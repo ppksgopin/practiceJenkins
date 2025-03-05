@@ -10,8 +10,9 @@ pipeline {
             }
            steps {
                 dir('zerozero-g2-react-develop') {
-                    sh 'npm install && npm install --save-dev assets-webpack-plugin@3.9.12 && npm run build:stage'
-                    sh 'tar -cvf zerozero-build-stage.tar.gz'
+                    sh 'pwd'
+                    sh 'node -v'
+                    sh 'npm -v'
                 }
            }
         }
