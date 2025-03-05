@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Build') {
            steps {
-                sh 'pwd && ls -al'
-		
+                dir('zerozero-g2-react-develop') {
+                    sh 'pwd && ls -al'
+                }
            }
         }
     }
